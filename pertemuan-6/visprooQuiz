@@ -1,0 +1,63 @@
+using System;
+
+class Kerucut
+{
+    private double _jariJari;
+    private double _tinggi;
+
+    public Kerucut(double jariJari, double tinggi)
+    {
+        Jari2 = jariJari;
+        Tinggi = tinggi;
+    }
+
+    public double Jari2
+    {
+        get { return _jariJari; }
+        set
+        {
+            if (value >= 0)
+                _jariJari = value;
+            else
+                throw new ArgumentException("Jari-jari harus lebih besar atau sama dengan 0");
+        }
+    }
+
+    public double Tinggi
+    {
+        get { return _tinggi; }
+        set
+        {
+            if (value >= 0)
+                _tinggi = value;
+            else
+                throw new ArgumentException("Tinggi harus lebih besar atau sama dengan 0");
+        }
+    }
+
+    public double LuasAlas
+    {
+        get { return Math.PI * _jariJari * _jariJari; }
+    }
+
+    public double Volume
+    {
+        get { return (1.0 / 3.0) * Math.PI * _jariJari * _jariJari * _tinggi; }
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Kerucut kerucutSaya = new Kerucut(5, 10);
+        Console.WriteLine($"Luas alas kerucut: {kerucutSaya.LuasAlas:.2f}");
+        Console.WriteLine($"Volume kerucut: {kerucutSaya.Volume:.2f}");
+
+        // Mengubah jari-jari dan tinggi
+        kerucutSaya.Jari2 = 10;
+        kerucutSaya.Tinggi = 25;
+        Console.WriteLine($"Luas alas kerucut (setelah diubah): {kerucutSaya.LuasAlas:.2f}");
+        Console.WriteLine($"Volume kerucut (setelah diubah): {kerucutSaya.Volume:.2f}");
+    }
+}

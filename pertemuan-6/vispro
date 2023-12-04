@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace nrstvn
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            latihan lat = new latihan();
+                                     
+            lat.nama = "BackdoorWin32.Exe";
+            lat.jenis = "Trojan";
+            lat.kapasitas = 14;
+            lat.kemampuan = "Shut Down";
+            lat.waktu = 30;
+            Console.WriteLine("Nama Malware berikut ini adalah {0}", lat.nama);
+            Console.WriteLine("Malware {0} termasuk jenis {1}", lat.nama, lat.jenis);
+            Console.WriteLine("Malware {0} berkapasitas {1} Mb", lat.nama, lat.kapasitas);
+            Console.WriteLine("Kem…
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+class Malware
+{
+    public string Nama { get; set; }
+    public int Size { get; set; }
+    public string JenisMalware { get; set; }
+    public string Kemampuan { get; set; }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Malware malware1 = new Malware
+        {
+            Nama = "Backdoorwin32.exe",
+            Size = 14,
+            JenisMalware = "Trojan",
+            Kemampuan = "Shut Down setiap 30 menit"
+        };
+
+        Console.WriteLine("\nNama malware berikut ini adalah {0}", malware1.Nama);
+        Console.WriteLine("Malware {0} termasuk jenis {1}", malware1.Nama, malware1.JenisMalware);
+        Console.WriteLine("Malware {0} berkapasitas {1} Mb", malware1.Nama, malware1.Size);
+        Console.WriteLine("Kemampuan {0} adalah {1}", malware1.Nama, malware1.Kemampuan);
+
+        Console.Read();
+    }
+}
